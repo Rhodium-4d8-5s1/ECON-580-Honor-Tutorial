@@ -1,4 +1,4 @@
-# Stage 1 — Code review: `replication_by_payperiod.do` and `dynamic_payperiod.do`
+# Stage 1 - Code review: `replication_by_payperiod.do` and `dynamic_payperiod.do`
 
 Reviewer notes on the two baseline do-files, read against the handout and Ganong et al. (2025). No code was changed; issues are flagged for triage only.
 
