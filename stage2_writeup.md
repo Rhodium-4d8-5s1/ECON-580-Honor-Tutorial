@@ -16,7 +16,7 @@ Only own income and the coworker instrument are quasi-differenced whereas stream
 
 **Result: the estimate is robust to relaxing the unit root.**
 
-| frequency | baseline ($\rho$=1) | estimated $\rho$ | $\rho$ = 0.996 |
+| frequency | baseline ($\rho$ =1) | estimated $\rho$ | $\rho$ = 0.996 |
 |---|---|---|---|
 | 7-day | 0.071 (F=110) | 0.075 (F=107) | 0.071 (F=110) |
 | 14-day | 0.085 (F=18) | 0.036 (F=1.0) | 0.085 (F=18) |
@@ -32,7 +32,7 @@ The eq-B.8 autocovariance-ratio estimator (`03_B3_estimate_rho.do`) is unstable 
 
 ## B.4 serial correlation in the transitory shock (MA(0) check)
 
-$C_k = \mathrm{Cov}\!\left(\Delta y,\,-\Delta \bar{y}_{\text{coworker},\,t+k}\right)$, $k=0,\ldots,4$, three columns (first-difference / estimated $\rho$ / $\rho$ = 0.996), per frequency, produced by `06_B4_leadcov.do`. Under MA(0), $C_0$ and $C_1$ are sizable and k $\geq$ 2 collapses toward zero.
+$C_k = \mathrm{Cov}\left(\Delta y,\,-\Delta \bar{y}_{\text{coworker},\,t+k}\right)$, $k=0,\ldots,4$, three columns (first-difference / estimated $\rho$ / $\rho$ = 0.996), per frequency, produced by `06_B4_leadcov.do`. Under MA(0), $C_0$ and $C_1$ are sizable and k $\geq$ 2 collapses toward zero.
 
 **Result: MA(0) is qualitatively supported, as in the paper.** <br>
 The covariances concentrate at k = 0 (negative) and k = 1 (positive) and fall off after the first two periods. The collapse is cleanest at 7-day (k $\geq$ 2 roughly an order of magnitude below $C_0$, $C_1$); at 14, 28 and monthly the k $\geq$ 2 values are smaller than $C_0$ and $C_1$ but noisier, as the longer leads fall on smaller samples. The $\rho$ = 0.996 column tracks the first difference closely; the estimated $\rho$ column does not collapse, reflecting the same unreliable in-sample $\rho$ as in B.3 (Magnitudes are like this is because we're in pound levels, not the paper's logs).
