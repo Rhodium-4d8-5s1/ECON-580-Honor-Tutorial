@@ -25,10 +25,10 @@ Only own income and the coworker instrument are quasi-differenced whereas stream
 
 - **The $\rho$ = 0.996 column is essentially identical to baseline at every frequency.** <br>
 - I think this is a clean confirmation that the estimate is insensitive to the unit-root relaxation, consistent with the paper (0.221 -> 0.196).
-- **The estimated-$\rho$ column is close to baseline for 7-, 28-day and monthly.** The 14-day value (0.036) is an exception, but it's a weak-instrument artifact (F = 1.0). See below for the stability concern in this sample.
+- **The estimated $\rho$ column is close to baseline for 7-, 28-day and monthly.** The 14-day value (0.036) is an exception, but it's a weak-instrument artifact (F = 1.0). See below for the stability concern in this sample.
 
 **in-sample $\rho$** <br>
-The eq-B.8 autocovariance-ratio estimator (`03_B3_estimate_rho.do`) is unstable in this sample. The worker $\rho$ is roughly 0.5-0.9; the coworker $\rho$ is noisy and at times implausible (0.18 at 14-day; the stability check across lags k=0,...,3 returns negative or greater-than-1 values at the coarser frequencies). This is likely because we are in GBP levels with a noisy leave-one-out firm mean, versus the paper's monthly log income. Thus, the B.3 robustness is read off the $\rho$ = 0.996 benchmark and the stable frequencies rather than the in-sample $\rho$. Estimated ρ values and the stability check are in `03_B3_estimate_rho.do` and `04_B3_stability_rho.do`.
+The eq-B.8 autocovariance-ratio estimator (`03_B3_estimate_rho.do`) is unstable in this sample. The worker $\rho$ is roughly 0.5-0.9; the coworker $\rho$ is noisy and at times implausible (0.18 at 14-day; the stability check across lags $k=0,\ldots,3$ returns negative or greater-than-1 values at the coarser frequencies). This is likely because we are in GBP levels with a noisy leave-one-out firm mean, versus the paper's monthly log income. Thus, the B.3 robustness is read off the $\rho$ = 0.996 benchmark and the stable frequencies rather than the in-sample $\rho$. Estimated ρ values and the stability check are in `03_B3_estimate_rho.do` and `04_B3_stability_rho.do`.
 
 ## B.4 serial correlation in the transitory shock (MA(0) check)
 
