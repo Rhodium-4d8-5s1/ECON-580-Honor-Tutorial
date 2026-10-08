@@ -8,7 +8,7 @@ This covers the Stage 1 review fixes and the two Appendix B robustness checks. A
 Column 3 (Total Pay) was identical to column 2 at the pay-period level (one paycheck per period, so pay-per-check = total), so it is removed. Columns 1 and 2 are now estimated on the same observations: the period-ahead (lead) instrument in column 1 is missing for each worker's final period, so column 1 defines the estimation sample and column 2 is restricted to it. Verified equal N across the two columns at every frequency.
 
 **Event-study reference period**<br>
-The reference period was at `-3`. I chose `-4` because for each candidate `k`, re-normalize the event study to `k` and sum the squared pre-event (k<0) coefficients across all four frequencies, then we can see the flattest is `k = -4` (income pre-trend sum 0.0775 at `-4` vs 0.144 at `-3`), and streaming agrees. This also matches the paper's normalization (eq. 17). The selection is in `02_based_year_k.do`.
+The reference period was at `-3`. I chose `-4` because for each candidate `k`, re-normalize the event study to `k` and sum the squared pre-event (k < 0) coefficients across all four frequencies, then we can see the flattest is `k = -4` (income pre-trend sum 0.0775 at `-4` vs 0.144 at `-3`), and streaming agrees. This also matches the paper's normalization (eq. 17). The selection is in `02_based_year_k.do`.
 
 ## B.3 less-than-full persistence
 Three columns per frequency (`table_b1_*.tex` from `05_B3_table.do`): (1) baseline first difference; (2) quasi-differenced with in-sample $\rho$; (3) quasi-differenced with $\rho$ = 0.996 (Commault). 
