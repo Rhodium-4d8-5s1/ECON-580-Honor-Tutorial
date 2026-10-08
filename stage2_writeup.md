@@ -34,7 +34,7 @@ The eq-B.8 autocovariance-ratio estimator (`03_B3_estimate_rho.do`) is unstable 
 
 $C_k = \mathrm{Cov}\!\left(\Delta y,\,-\Delta \bar{y}_{\text{coworker},\,t+k}\right)$, $k=0,\ldots,4$, three columns (first-difference / estimated $\rho$ / $\rho$ = 0.996), per frequency, produced by `06_B4_leadcov.do`. Under MA(0), $C_0$ and $C_1$ are sizable and k $\geq$ 2 collapses toward zero.
 
-**Result: MA(0) is qualitatively supported, as in the paper.** The covariances concentrate at k = 0 (negative) and k = 1 (positive) and fall off after the first two periods. The collapse is cleanest at 7-day (k $\geq$ 2 roughly an order of magnitude below $C_0$, $C_1$); at 14, 28 and monthly the k $\geq$ 2 values are smaller than $C_0$ and $C_1$ but noisier, as the longer leads fall on smaller samples. The $\rho$ = 0.996 column tracks the first difference closely; the estimated-$\rho$ column does not collapse, reflecting the same unreliable in-sample $\rho$ as in B.3 (Magnitudes are like this is because we're in pound levels, not the paper's logs).
+**Result: MA(0) is qualitatively supported, as in the paper.** The covariances concentrate at k = 0 (negative) and k = 1 (positive) and fall off after the first two periods. The collapse is cleanest at 7-day (k $\geq$ 2 roughly an order of magnitude below $C_0$, $C_1$); at 14, 28 and monthly the k $\geq$ 2 values are smaller than $C_0$ and $C_1$ but noisier, as the longer leads fall on smaller samples. The $\rho$ = 0.996 column tracks the first difference closely; the estimated $\rho$ column does not collapse, reflecting the same unreliable in-sample $\rho$ as in B.3 (Magnitudes are like this is because we're in pound levels, not the paper's logs).
 
 ## How to run the do files
 
