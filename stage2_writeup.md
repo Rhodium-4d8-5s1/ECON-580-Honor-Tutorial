@@ -25,7 +25,7 @@ Only own income and the coworker instrument are quasi-differenced whereas stream
 
 - **The $\rho$ = 0.996 column is essentially identical to baseline at every frequency.** <br>
 - I think this is a clean confirmation that the estimate is insensitive to the unit-root relaxation, consistent with the paper (0.221 -> 0.196).
-- **The estimated $\rho$ column is close to baseline for 7-, 28-day and monthly.** The 14-day value (0.036) is an exception, but it's a weak-instrument artifact (F = 1.0). See below for the stability concern in this sample.
+- **The estimated $\rho$ column is close to baseline for 7, 28-day and monthly.** The 14-day value (0.036) is an exception, but it's a weak-instrument artifact (F = 1.0). See below for the stability concern in this sample.
 
 **in-sample $\rho$** <br>
 The eq-B.8 autocovariance-ratio estimator (`03_B3_estimate_rho.do`) is unstable in this sample. The worker $\rho$ is roughly 0.5-0.9; the coworker $\rho$ is noisy and at times implausible (0.18 at 14-day; the stability check across lags $k=0,\ldots,3$ returns negative or greater-than-1 values at the coarser frequencies). This is likely because we are in GBP levels with a noisy leave-one-out firm mean, versus the paper's monthly log income. Thus, the B.3 robustness is read off the $\rho$ = 0.996 benchmark and the stable frequencies rather than the in-sample $\rho$. Estimated ρ values and the stability check are in `03_B3_estimate_rho.do` and `04_B3_stability_rho.do`.
@@ -39,7 +39,7 @@ The covariances concentrate at k = 0 (negative) and k = 1 (positive) and fall of
 
 ## How to run the do files
 
-- **Run `01_replication_by_payperiod_updated.do` first**: It saves the per-frequency panels (`payperiod_panel_*.dta`) that the B.3/B.4 scripts read.
+- **Run `01_replication_by_payperiod_updated.do` first**: It saves the per-frequency panels (`payperiod_panel_*.dta`) that the rest of the do files read.
 - The $\rho$ values hardcoded in `05_B3_table.do` and `06_B4_leadcov.do` come from `03_B3_estimate_rho.do` (k = 0).
 - Paths at the top of each new do-file are left blank, so **set `$pdata` and the output/log paths before running**.
 - New do-files (do not edit the baseline): `02_based_year_k.do`, `03_B3_estimate_rho.do`, `04_B3_stability_rho.do`, `05_B3_table.do`, `06_B4_leadcov.do`.
