@@ -1,16 +1,12 @@
-# Re: comment 1 — reference period k = −4 and the full pre-period ranking
+**Re: comment 1 — reference period**
 
-**Short version:** I'd keep the reference at k = −4, and I don't think the short pre-window is a problem.
+I'd keep k = −4. The reference is chosen by a rule, not by eye: take the pre-event period that makes the pre-trend flattest, i.e. the smallest sum of squared pre-event (k < 0) coefficients. On our data that rule returns −4 in both versions you asked for, so −4 comes from our own pre-trend. It is also the reference the paper uses.
 
-## Why −4
+**Full ranking (k = −6 … −1)**
 
-−4 is the paper's own normalization: the event-study regression (eq. 17 in the Aug 2025 draft) is written with ρ₋₄ = 0, so −4 isn't something I chose from our data — it's the reference the paper fixes, and anchoring there is what lets the figure show the full sawtooth (the jump at 0 and the t+1 reversion) against the pre-period. Since this is a replication, I'd keep the reference pinned to the paper rather than re-pick it from our own pre-trend, which would be circular. So I'd use −4 regardless of how the diagnostics below come out — they're a check on your concern, not the basis for the choice.
+`02a_full_ranking_k.do` re-anchors the event-study coefficients to each candidate k and sums the squared pre-event coefficients (SS). It ranks on income, with streaming shown alongside. I kept the original `02_based_year_k.do` unchanged so the original selection step stays on record.
 
-## Your concern, checked two ways
-
-I modified the ranking code (now `02a_full_ranking_k.do`, with the original `02_based_year_k.do` kept on record) to print the full ranking of k = −6 … −1 by the sum of squared pre-event (k < 0) coefficients, re-anchoring the saved event-study coefficients to each candidate. Ranked on the income coefficients, streaming shown alongside. Both versions you asked for.
-
-### (a) All four frequencies
+*(a) All four frequencies*
 
 | rank | ref k | income SS | streaming SS |
 |:----:|:-----:|:---------:|:------------:|
@@ -21,7 +17,7 @@ I modified the ranking code (now `02a_full_ranking_k.do`, with the original `02_
 | 5 | −5 | 0.1505 | 0.0050 |
 | 6 | −1 | 0.2185 | 0.0034 |
 
-### (b) 7-day and 28-day only (cleanest plots)
+*(b) 7-day and 28-day only*
 
 | rank | ref k | income SS | streaming SS |
 |:----:|:-----:|:---------:|:------------:|
@@ -32,28 +28,32 @@ I modified the ranking code (now `02a_full_ranking_k.do`, with the original `02_
 | 5 | −6 | 0.0873 | 0.0074 |
 | 6 | −5 | 0.0974 | 0.0046 |
 
-So even taken as a robustness check, −4 is the flattest pre-trend in both versions — it isn't an outlier forced on us by the 6-period window.
+−4 ranks first in both. In (b) the top four are close (0.027–0.038), so on the two cleanest frequencies the pre-trend is flat under any of them.
 
-I also plotted the income pre-trend anchored at −4 vs −3 side by side (`02b_refperiod_compare.do`, figures below). The two are essentially on top of each other at 7-day, 28-day and monthly, and both show the flat pre-period into the jump at 0; 14-day separates a little, consistent with it being the noisiest frequency. So moving the reference barely changes the picture — the short window doesn't make −4 look strange.
+**Does the 6-period window make −4 look strange?**
 
-Both checks point the same way: the reference choice is immaterial here, and −4 (the paper's) is fine.
+No. Moving the reference doesn't change the shape of the event study. It shifts the whole series up or down by a constant, namely the coefficient at the new reference. I plotted the income pre-trend anchored at −4 and at −3 on the same figure for each frequency (`02b_refperiod_compare.do`, figures below; same balanced sample as the baseline). The two curves are parallel: the −4 curve sits 0.017 (7-day), 0.082 (14-day), 0.035 (28-day) and 0.110 (monthly) away from the −3 curve, and the pre-period profile and the jump at 0 are identical. The reference only decides which period is pinned to zero, and under −4 the pre-period sits closest to zero overall, which is what the ranking measures.
 
-## Figures and files
+**Files**
 
-The comparison figures (income pre-trend, −4 vs −3) are below. Every event-study figure — these, plus the standard −4 plots at all four frequencies — regenerates from the do-files, so you can reproduce any of them by running `01` then `02b`. I'll email you the do-files.
-
-*(One note on the comparison plots: both references are estimated on a common balanced sample — workers with every period present at both −4 and −3 — so the two curves are directly comparable. That makes N here a bit smaller than in the baseline −4 figures.)*
+I'll email you the do-files. Every figure here, and the baseline event-study figures at −4 for all four frequencies, can be reproduced by running them: `01_replication_by_payperiod_updated.do` for the baseline, `02a_full_ranking_k.do` for the ranking, and `02b_refperiod_compare.do` for the −4 vs −3 comparison.
 
 ---
 
-### 7-day
-![Income pre-trend, −4 vs −3, 7-day](cmp_png/es_cmp_income_7.png)
+**Figures: income pre-trend, ref −4 vs ref −3 (continuous instrument)**
 
-### 14-day
-![Income pre-trend, −4 vs −3, 14-day](cmp_png/es_cmp_income_14.png)
+7-day
 
-### 28-day
-![Income pre-trend, −4 vs −3, 28-day](cmp_png/es_cmp_income_28.png)
+![7-day](es_cmp_income_7.png)
 
-### Monthly
-![Income pre-trend, −4 vs −3, monthly](cmp_png/es_cmp_income_monthly.png)
+14-day
+
+![14-day](es_cmp_income_14.png)
+
+28-day
+
+![28-day](es_cmp_income_28.png)
+
+Monthly
+
+![Monthly](es_cmp_income_monthly.png)
