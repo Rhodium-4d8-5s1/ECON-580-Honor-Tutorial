@@ -1,8 +1,8 @@
 **Re: comment 1 — reference period**
 
-I'd keep k = −4. The reference is chosen by a rule, not by eye: take the pre-event period that makes the pre-trend flattest, i.e. the smallest sum of squared pre-event (k < 0) coefficients. On our data that rule returns −4 in both versions you asked for, so −4 comes from our own pre-trend. It is also the reference the paper uses.
+I'd keep k = −4. The reference is chosen by the rule that taking the pre-event period that makes the pre-trend flattest, i.e. the smallest sum of squared pre-event (k < 0) coefficients. On the data that rule returns −4, so −4 comes from our own pre-trend. It coincides with the reference the paper uses.
 
-**Full ranking (k = −6 … −1)**
+**Full ranking (k = −6,...,−1)**
 
 `02a_full_ranking_k.do` re-anchors the event-study coefficients to each candidate k and sums the squared pre-event coefficients (SS). It ranks on income, with streaming shown alongside. I kept the original `02_based_year_k.do` unchanged so the original selection step stays on record.
 
@@ -44,16 +44,17 @@ I'll email you the do-files. Every figure here, and the baseline event-study fig
 
 7-day
 
-![7-day](es_cmp_income_7.png)
+<img width="1703" height="1010" alt="image" src="https://github.com/user-attachments/assets/aed2a353-f822-4ed6-9d59-3ea5d01ffeb9" />
 
 14-day
 
-![14-day](es_cmp_income_14.png)
+<img width="1696" height="1036" alt="image" src="https://github.com/user-attachments/assets/32c8ca63-616e-40ed-b0c4-c03e4fa7fc18" />
 
 28-day
 
-![28-day](es_cmp_income_28.png)
+<img width="1661" height="1041" alt="image" src="https://github.com/user-attachments/assets/aaaa77c9-2b27-4550-a1ba-08ef5d11ee06" />
 
 Monthly
 
-![Monthly](es_cmp_income_monthly.png)
+<img width="1661" height="983" alt="image" src="https://github.com/user-attachments/assets/93aa2188-7087-4321-8d9c-ba74659f20a6" />
+
