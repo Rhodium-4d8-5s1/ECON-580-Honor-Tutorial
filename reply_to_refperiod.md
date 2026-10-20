@@ -1,8 +1,8 @@
 **Re: comment 1 — reference period**
 
-I'd keep k = −4. The reference is chosen by the rule that taking the pre-event period that makes the pre-trend flattest, i.e. the smallest sum of squared pre-event (k < 0) coefficients. On the data that rule returns −4, so −4 comes from our own pre-trend. It coincides with the reference the paper uses. I suggest that we should do -4 since we have a justification for it. Doing the conventional -1 might raise the concerns of not being able to see any run-up just before the shock gets absorbed into the baseline, so a reader can’t rule out that you’re hiding pre-event movement, even when there isn’t any. If the graph is not ideal then it's not ideal. But I have done the comparison between two event study, I'd love to say the results are great.
+Recall that Ganong et al. note that some event studies normalize $\rho_{-1} = 0$, but they normalize $\rho_{-4}$ “because it makes it easy for the reader to evaluate changes in income in the months immediately prior to $t^*$” (4.2, after eq. 17). Anchoring at $−1$ pins the period just before the shock to zero, so any run-up into the event would be absorbed into the baseline, and a reader couldn’t rule out that pre-event movement is being hidden, even when there is none. I picked $-4$ because it gives the flattest pre-trend. For each candidate reference $k = -6, \ldots, -1$, I computed the sum of squared pre-event ($k < 0$) coefficients, and $-4$ has the smallest sum, both across all four frequencies and across 7-day and 28-day only (tables below). Note that the paper didn't pick its reference period because that gives the flattest pre-trend, but based on the figures, their reference is one of the flattest. 
 
-**Full ranking (k = −6,...,−1)**
+**Full ranking $k = -6, \ldots, -1$**
 
 `02a_full_ranking_k.do` re-anchors the event-study coefficients to each candidate k and sums the squared pre-event coefficients (SS). It ranks on income, with streaming shown alongside. I kept the original `02_based_year_k.do` unchanged so the original selection step stays on record.
 
@@ -32,7 +32,7 @@ I'd keep k = −4. The reference is chosen by the rule that taking the pre-event
 
 **Does the 6-period window make −4 look strange?**
 
-No. Moving the reference doesn't change the shape of the event study. It shifts the whole series up or down by a constant, namely the coefficient at the new reference. I plotted the income pre-trend anchored at −4 and at −3 on the same figure for each frequency (`02b_refperiod_compare.do`, figures below; same balanced sample as the baseline). The two curves are parallel: the −4 curve sits 0.017 (7-day), 0.082 (14-day), 0.035 (28-day) and 0.110 (monthly) away from the −3 curve, and the pre-period profile and the jump at 0 are identical. The reference only decides which period is pinned to zero, and under −4 the pre-period sits closest to zero overall, which is what the ranking measures.
+No. Moving the reference doesn't change the shape of the event study. It shifts the whole series up or down by a constant, namely the coefficient at the new reference. I plotted the income pre-trend anchored at −4 and at −3 on the same figure for each frequency (`02b_refperiod_compare.do`, figures below). The two curves are parallel: the −4 curve sits 0.017 (7-day), 0.082 (14-day), 0.035 (28-day) and 0.110 (monthly) away from the −3 curve, and the pre-period profile and the jump at 0 are identical. The reference only decides which period is pinned to zero, and under −4 the pre-period sits closest to zero overall, which is what the ranking measures.
 
 **Files**
 
