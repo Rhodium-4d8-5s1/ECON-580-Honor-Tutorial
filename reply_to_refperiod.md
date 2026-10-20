@@ -38,8 +38,6 @@ No. Moving the reference doesn't change the shape of the event study. It shifts 
 
 I'll email you the do-files. Every figure here, and the baseline event-study figures at −4 for all four frequencies, can be reproduced by running them: `01_replication_by_payperiod_updated.do` for the baseline, `02a_full_ranking_k.do` for the ranking, and `02b_refperiod_compare.do` for the −4 vs −3 comparison.
 
----
-
 **Figures: income pre-trend, ref −4 vs ref −3 (continuous instrument)**
 
 7-day
