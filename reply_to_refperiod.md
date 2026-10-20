@@ -1,6 +1,6 @@
 **Re: comment 1 — reference period**
 
-I'd keep k = −4. The reference is chosen by the rule that taking the pre-event period that makes the pre-trend flattest, i.e. the smallest sum of squared pre-event (k < 0) coefficients. On the data that rule returns −4, so −4 comes from our own pre-trend. It coincides with the reference the paper uses.
+I'd keep k = −4. The reference is chosen by the rule that taking the pre-event period that makes the pre-trend flattest, i.e. the smallest sum of squared pre-event (k < 0) coefficients. On the data that rule returns −4, so −4 comes from our own pre-trend. It coincides with the reference the paper uses. I suggest that we should do -4 since we have a justification for it. Doing the conventional -1 might raise the concerns of not being able to see any run-up just before the shock gets absorbed into the baseline, so a reader can’t rule out that you’re hiding pre-event movement, even when there isn’t any. If the graph is not ideal then it's not ideal. But I have done the comparison between two event study, I'd love to say the results are great.
 
 **Full ranking (k = −6,...,−1)**
 
