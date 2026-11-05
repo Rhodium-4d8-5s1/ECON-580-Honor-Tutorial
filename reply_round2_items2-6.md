@@ -63,7 +63,7 @@ Week FE barely move the 7-day, 28-day and monthly estimates. The 14-day estimate
 
 ### Comment 6: looser sample
 
-`08_loose_sample.do` uses the same sample construction as `01`, except the minimum-tenure rule is ** $\geq$ 4 pay periods** (baseline: $\geq$ 13). This applies to the regression tables only; the event study keeps the balanced panel. On this sample I re-ran the $\rho$ estimation (both with and without worker FE), B.3 and B.4.
+`08_loose_sample.do` uses the same sample construction as `01`, except the minimum-tenure rule is **$\geq$ 4 pay periods** (baseline: $\geq$ 13). This applies to the regression tables only; the event study keeps the balanced panel. On this sample I re-ran the $\rho$ estimation (both with and without worker FE), B.3 and B.4.
 
 | | 7-day | 14-day | 28-day | Monthly |
 |---|---|---|---|---|
