@@ -1,4 +1,4 @@
-Thanks for the review. Below are Comment 2–6. All tables and figures are compiled in **Stage2_round2_tables.pdf**, which I've emailed along with the do-files and logs. Per your request, the event-study reference period is now **k = −2** (re-ran `01_replication_by_payperiod_updated.do`). The Table 1 regressions don't depend on the reference period, so only the figures changed.
+Thanks for the review. Below are the responses Comment 2–6. All tables and figures are compiled in **Stage2_round2_tables.pdf**, which I've emailed along with the do-files and logs. Per your request, the event-study reference period is now **k = −2** (re-ran `01_replication_by_payperiod_updated.do`). The Table 1 regressions don't depend on the reference period, so only the figures changed.
 
 All estimates are 2SLS in levels (GBP) with the period-ahead coworker instrument; SEs are clustered by firm.
 
@@ -49,7 +49,7 @@ Here is the output of `04_B3_stability_rho.do` (log attached in the email). It g
 
 The in-sample $\rho$ is not stable across lags, especially for the coworker series at 14-day and monthly. That is why I read robustness off the benchmark-$\rho$ column.
 
-### Item 5: calendar-week FE
+### Comment 5: calendar-week FE
 
 `07_weekFE_baseline.do` replaces calendar-month FE with calendar-week FE, labeling each week by its Monday. It produces the baseline ($\rho = 1$) tables and event-study figures in two variants: with and without worker FE. The table below shows Table 1, column 1 (period-ahead instrument):
 
@@ -61,7 +61,7 @@ The in-sample $\rho$ is not stable across lags, especially for the coworker seri
 
 Week FE barely move the 7-day, 28-day and monthly estimates. The 14-day estimate with worker FE falls to 0.060, while its first-stage F rises from 17.7 to 50.3. The pay-per-check column and all 16 figures are in the compiled file (Section 4, Figures 5–8).
 
-### Item 6: looser sample
+### Comment 6: looser sample
 
 `08_loose_sample.do` uses the same sample construction as `01`, except the minimum-tenure rule is ** $\geq$ 4 pay periods** (baseline: $\geq$ 13). This applies to the regression tables only; the event study keeps the balanced panel. On this sample I re-ran the $\rho$ estimation (both with and without worker FE), B.3 and B.4.
 
