@@ -19,7 +19,7 @@ As you expected, the impact is negligible. The benchmark-$\rho$ $\beta$ matches 
 
 `03a_B3_estimate_rho.do` re-estimates $\rho$ (eq. B.8, k = 0), residualizing on calendar-month FE only. Dropping worker FE moves every estimate to **0.89–0.99**, close to the benchmark:
 
-| | Worker + month FE: $\rho_w$ | Worker + month FE: $\rho_co$ | Month FE only: $\rho_w$ | Month FE only: $\rho_{co}$ |
+| | Worker + month FE: $\rho_w$ | Worker + month FE: $\rho_{co}$ | Month FE only: $\rho_w$ | Month FE only: $\rho_{co}$ |
 |---|---|---|---|---|
 | 7-day | 0.7275 | 0.8276 | 0.9494 | 0.9920 |
 | 14-day | 0.5028 | 0.1765 | 0.8884 | 0.9379 |
